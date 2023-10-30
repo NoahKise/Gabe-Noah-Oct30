@@ -1,10 +1,11 @@
 // Business Logic
 
-function Place(landmark, location, date, notes) {
+function Place(landmark, location, date, notes, color) {
     this.landmark = landmark;
     this.location = location;
     this.date = date;
     this.notes = notes;
+    this.color = color;
 }
 
 // UI Logic
@@ -22,10 +23,8 @@ function formHandler(event) {
     const colorInput = document.querySelector("input#inputColor").value;
     const imageInput = document.querySelector("input#inputImage").files[0];
 
-    const newPlace = new Place(landmarkInput, locationInput, dateInput, notesInput);
+    const newPlace = new Place(landmarkInput, locationInput, dateInput, notesInput, colorInput);
     placesArray.push(newPlace);
-    console.log(newPlace);
-    console.log(placesArray);
     const nameDiv = document.createElement("div");
     nameDiv.setAttribute("id", "resultName");
     const resultDiv = document.createElement("div");
@@ -53,10 +52,15 @@ function formHandler(event) {
     resultDiv.append(imgImage, h2Location, h3Date, pNotes)
     resultDiv.style.backgroundColor = colorInput;
     document.body.append(nameDiv, resultDiv);
-    function reveal() {
-        resultDiv.removeAttribute("id")
+    function toggleDisplay() {
+        if (resultDiv.getAttribute("id") === "hidden") {
+            resultDiv.removeAttribute("id");
+        } else {
+            resultDiv.setAttribute("id", "hidden");
+        }
     }
-    buttonLandmark.addEventListener("click", reveal);
+
+    buttonLandmark.addEventListener("click", toggleDisplay);
 }
 
 window.addEventListener("load", function () {
