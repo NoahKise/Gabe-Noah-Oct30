@@ -9,10 +9,9 @@ function Place(landmark, location, date, notes, color) {
 }
 
 // UI Logic
+
 let placesArray = [];
 const body = document.querySelector("body");
-
-
 
 function formHandler(event) {
     event.preventDefault();
@@ -61,6 +60,19 @@ function formHandler(event) {
     }
 
     buttonLandmark.addEventListener("click", toggleDisplay);
+    
+    const landmarkForm = document.getElementById("landmark");
+    landmarkForm.reset();
+    const locationForm = document.getElementById("location");
+    locationForm.reset();
+    const dateForm = document.getElementById("date");
+    dateForm.reset();
+    const colorForm = document.getElementById("color");
+    colorForm.reset();
+    const imageForm = document.getElementById("image");
+    imageForm.reset();
+    const notesForm = document.getElementById("notes");
+    notesForm.reset();
 }
 
 window.addEventListener("load", function () {
