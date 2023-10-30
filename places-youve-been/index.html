@@ -1,4 +1,5 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -6,7 +7,37 @@
     <script src="js/scripts.js"></script>
     <title>Places You've Been</title>
 </head>
+
 <body>
-    
+
+    <h1> Places You've Been</h1>
+    <form id="landmark">
+        <label>Landmark</label>
+        <input id="inputLandmark" type="text" name="inputLandmark">
+    </form>
+
+    <form id="location">
+        <label>Location</label>
+        <input id="inputLocation" type="text" name="inputLocation">
+    </form>
+    <form id="date">
+        <label>Year</label>
+        <input id="inputDate" type="date" name="inputDate">
+    </form>
+    <form id="color">
+        <label>Pick a color this place reminds you of</label>
+        <input id="inputColor" type="color" name="inputColor">
+    </form>
+    <form action="/action_page.php">
+        <input type="file" id="inputImage" name="imageName">
+    </form>
+    <form id="notes">
+        <label>Notes</label>
+        <textarea id="inputNotes" type="text" name="inputNotes" rows="10" cols="30"
+            placeholder="type here"></textarea><br>
+        <br>
+        <button class="button" type="submit" value="submit">Add Place</button>
+    </form>
 </body>
+
 </html>
