@@ -16,3 +16,7 @@
     width: 21vw;
     min-width: 280px;
 }
+
+#hidden {
+    display: none;
+}
