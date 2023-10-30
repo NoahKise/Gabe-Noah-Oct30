@@ -31,13 +31,13 @@ function formHandler(event) {
     const resultDiv = document.createElement("div");
     resultDiv.setAttribute("class", "result");
     resultDiv.setAttribute("id", "hidden");
-    const h1Landmark = document.createElement("h1");
+    const buttonLandmark = document.createElement("button");
     const h2Location = document.createElement("h2");
     const h3Date = document.createElement("h3");
     const pNotes = document.createElement("p");
     const imgImage = document.createElement("img");
 
-    h1Landmark.append(landmarkInput);
+    buttonLandmark.append(landmarkInput);
     h2Location.append(locationInput);
     h3Date.append(dateInput);
     pNotes.append(notesInput);
@@ -49,14 +49,14 @@ function formHandler(event) {
         };
         reader.readAsDataURL(imageInput);
     }
-    nameDiv.append(h1Landmark)
+    nameDiv.append(buttonLandmark)
     resultDiv.append(imgImage, h2Location, h3Date, pNotes)
     resultDiv.style.backgroundColor = colorInput;
     document.body.append(nameDiv, resultDiv);
     function reveal() {
         resultDiv.removeAttribute("id")
     }
-    // nameDiv.onclick = reveal();
+    buttonLandmark.addEventListener("click", reveal);
 }
 
 window.addEventListener("load", function () {
